@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "elastic.tool.uris",
+      "type": "java.util.List<java.lang.String>",
+      "description": "es server location [ip:port]"
+    },
+    {
+      "name": "elastic.tool.username",
+      "type": "java.lang.String",
+      "description": "es server userName"
+    },
+    {
+      "name": "elastic.tool.password",
+      "type": "java.lang.String",
+      "description": "es server password"
+    }
+  ]
+}

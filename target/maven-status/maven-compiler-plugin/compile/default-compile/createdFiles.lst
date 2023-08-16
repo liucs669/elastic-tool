@@ -1,0 +1,7 @@
+com/midu/elastic/ElasticApplication.class
+com/midu/elastic/service/DocBaseService.class
+com/midu/elastic/service/ElasticsearchService.class
+com/midu/elastic/service/IndexBaseService.class
+com/midu/elastic/prop/EsBaseProperties.class
+com/midu/elastic/listener/EsServiceInjectListener.class
+com/midu/elastic/config/ElasticToolAutoConfiguration.class

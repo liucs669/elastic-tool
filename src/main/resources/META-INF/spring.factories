@@ -1,0 +1,5 @@
+org.springframework.context.ApplicationListener=\
+  com.midu.elastic.listener.EsServiceInjectListener
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+ com.midu.elastic.config.ElasticToolAutoConfiguration
