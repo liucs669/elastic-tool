@@ -2,25 +2,25 @@
   "groups": [
     {
       "name": "elastic.tool",
-      "type": "com.midu.elastic.prop.EsBaseProperties",
-      "sourceType": "com.midu.elastic.prop.EsBaseProperties"
+      "type": "com.miduchina.wrd.elastic.prop.EsBaseProperties",
+      "sourceType": "com.miduchina.wrd.elastic.prop.EsBaseProperties"
     }
   ],
   "properties": [
     {
       "name": "elastic.tool.password",
       "type": "java.lang.String",
-      "sourceType": "com.midu.elastic.prop.EsBaseProperties"
+      "sourceType": "com.miduchina.wrd.elastic.prop.EsBaseProperties"
     },
     {
       "name": "elastic.tool.uris",
       "type": "java.util.List<java.lang.String>",
-      "sourceType": "com.midu.elastic.prop.EsBaseProperties"
+      "sourceType": "com.miduchina.wrd.elastic.prop.EsBaseProperties"
     },
     {
       "name": "elastic.tool.username",
       "type": "java.lang.String",
-      "sourceType": "com.midu.elastic.prop.EsBaseProperties"
+      "sourceType": "com.miduchina.wrd.elastic.prop.EsBaseProperties"
     }
   ],
   "hints": []

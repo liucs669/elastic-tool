@@ -1,7 +1,7 @@
-/Users/hanson/IdeaProjects/elastic/src/main/java/com/midu/elastic/prop/EsBaseProperties.java
-/Users/hanson/IdeaProjects/elastic/src/main/java/com/midu/elastic/listener/EsServiceInjectListener.java
-/Users/hanson/IdeaProjects/elastic/src/main/java/com/midu/elastic/service/IndexBaseService.java
-/Users/hanson/IdeaProjects/elastic/src/main/java/com/midu/elastic/service/DocBaseService.java
-/Users/hanson/IdeaProjects/elastic/src/main/java/com/midu/elastic/service/ElasticsearchService.java
-/Users/hanson/IdeaProjects/elastic/src/main/java/com/midu/elastic/ElasticApplication.java
-/Users/hanson/IdeaProjects/elastic/src/main/java/com/midu/elastic/config/ElasticToolAutoConfiguration.java
+/Users/hanson/IdeaProjects/elastic/src/main/java/com/miduchina/wrd/elastic/config/ElasticToolAutoConfiguration.java
+/Users/hanson/IdeaProjects/elastic/src/main/java/com/miduchina/wrd/elastic/listener/EsServiceInjectListener.java
+/Users/hanson/IdeaProjects/elastic/src/main/java/com/miduchina/wrd/elastic/prop/EsBaseProperties.java
+/Users/hanson/IdeaProjects/elastic/src/main/java/com/miduchina/wrd/elastic/ElasticApplication.java
+/Users/hanson/IdeaProjects/elastic/src/main/java/com/miduchina/wrd/elastic/service/IndexBaseService.java
+/Users/hanson/IdeaProjects/elastic/src/main/java/com/miduchina/wrd/elastic/service/DocBaseService.java
+/Users/hanson/IdeaProjects/elastic/src/main/java/com/miduchina/wrd/elastic/service/ElasticsearchService.java

@@ -1,10 +1,7 @@
-package com.midu.elastic;
+package com.miduchina.wrd.elastic;
 
-import com.midu.elastic.listener.EsServiceInjectListener;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.event.ApplicationPreparedEvent;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**

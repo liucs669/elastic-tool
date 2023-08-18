@@ -1,4 +1,4 @@
-package com.midu.elastic.prop;
+package com.miduchina.wrd.elastic.prop;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

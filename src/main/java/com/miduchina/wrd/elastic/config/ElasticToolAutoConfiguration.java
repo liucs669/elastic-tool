@@ -1,21 +1,18 @@
-package com.midu.elastic.config;
+package com.miduchina.wrd.elastic.config;
 
 /**
  * @AUTHOR hanson
  * @SINCE 2023/7/28 11:26
  */
-import com.midu.elastic.prop.EsBaseProperties;
-import com.midu.elastic.service.IndexBaseService;
+import com.miduchina.wrd.elastic.prop.EsBaseProperties;
+import com.miduchina.wrd.elastic.service.IndexBaseService;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.data.elasticsearch.client.ClientConfiguration;
 import org.springframework.data.elasticsearch.client.RestClients;
 import org.springframework.data.elasticsearch.config.AbstractElasticsearchConfiguration;
@@ -23,9 +20,11 @@ import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.StringUtils;
 
+import javax.el.PropertyNotFoundException;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 
 
 @Configuration
@@ -50,10 +49,12 @@ public class ElasticToolAutoConfiguration extends AbstractElasticsearchConfigura
 
     @Override
     @Bean
-//    @ConditionalOnProperty(prefix = "elastic.tool",name = "uris")
+//    @ConditionalOnProperty(prefix = "elastic.tool",name = "uris",havingValue = "")
     public RestHighLevelClient elasticsearchClient() {
 
         ClientConfiguration.ClientConfigurationBuilderWithRequiredEndpoint builder = ClientConfiguration.builder();
+
+        Optional.ofNullable(esBaseProperties).map(EsBaseProperties::getUris).orElseThrow(()->new PropertyNotFoundException("elastic-tool 服务端地址未配置 elastic.tool.uris: "));
 
         ClientConfiguration.MaybeSecureClientConfigurationBuilder maybeSecureClientConfigurationBuilder = builder.connectedTo(esBaseProperties.getUris().toArray(new String[0]));
 
@@ -80,15 +81,15 @@ public class ElasticToolAutoConfiguration extends AbstractElasticsearchConfigura
 
 
     @Bean
-//    @ConditionalOnBean(RestHighLevelClient.class)
+    @ConditionalOnBean(RestHighLevelClient.class)
     public ElasticsearchRestTemplate elasticsearchRestTemplate(RestHighLevelClient restHighLevelClient){
         logger.info("【ElasticTool】 template 初始化完成。。。。。。。。。。。。。");
         return new ElasticsearchRestTemplate(restHighLevelClient);
     }
 
     @Bean
-//    @ConditionalOnBean(ElasticsearchRestTemplate.class)
-    public IndexBaseService indexBaseService(ElasticsearchRestTemplate elasticsearchRestTemplate ,RestHighLevelClient restHighLevelClient){
+    @ConditionalOnBean(ElasticsearchRestTemplate.class)
+    public IndexBaseService indexBaseService(ElasticsearchRestTemplate elasticsearchRestTemplate , RestHighLevelClient restHighLevelClient){
         return new IndexBaseService(elasticsearchRestTemplate,restHighLevelClient);
     }
 

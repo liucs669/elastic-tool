@@ -1,7 +1,7 @@
-package com.midu.elastic.listener;
+package com.miduchina.wrd.elastic.listener;
 
-import com.midu.elastic.service.ElasticsearchService;
-import com.midu.elastic.service.DocBaseService;
+import com.miduchina.wrd.elastic.service.ElasticsearchService;
+import com.miduchina.wrd.elastic.service.DocBaseService;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
@@ -10,7 +10,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
-import org.springframework.stereotype.Component;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package com.midu.elastic.service;
+package com.miduchina.wrd.elastic.service;
 
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -346,13 +346,14 @@ public class DocBaseService {
 
         if (idField!=null)
             idField.setAccessible(true);
-
+        else
+            log.error("没有找到主键字段 @Id");
         org.springframework.data.elasticsearch.annotations.Document annotation = clazz.getAnnotation(org.springframework.data.elasticsearch.annotations.Document.class);
         this.indexName = Objects.nonNull(annotation) ? annotation.indexName() : "";
 
         if (!StringUtils.hasText(indexName))
             log.error("【es服务注册监听器】获取索引名失败，，，可能会导致后续es操作失败 at {}",clazz);
 
-        log.info("es服务初始化完成，索引名：{},主键：{}",indexName,idField.getName());
+        log.info("es服务初始化完成，索引名：{},主键：{}",indexName,idField==null ? "" : idField.getName());
     }
 }

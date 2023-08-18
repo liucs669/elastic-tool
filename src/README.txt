@@ -37,7 +37,7 @@ elasticsearch 工具
 
     2，索引下文档操作
 
-        1），es实体类实现 com.midu.elastic.service.ElasticsearchService 接口。
+        1），es实体类实现 service.com.miduchina.wrd.elastic.ElasticsearchService 接口。
             实现接口serviceName方法，返回该实体类对应的服务的名称，名称需要全局唯一，非空。
 
         2），自动注入 获取服务类

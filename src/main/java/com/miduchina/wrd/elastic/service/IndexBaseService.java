@@ -1,4 +1,4 @@
-package com.midu.elastic.service;
+package com.miduchina.wrd.elastic.service;
 
 import org.elasticsearch.action.admin.indices.alias.Alias;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
